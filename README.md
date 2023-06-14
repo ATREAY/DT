@@ -12,10 +12,9 @@ In summary, a dual-use chemical tracking system that leverages supply chain data
 ## Techstack
 1. Solidity
 2. Javascript
-3. PhP
-4. Html
-5. CSS
-6. Blockchain
+3. Html
+4. CSS
+5. Blockchain
 
 ## Installation Steps
 
@@ -28,10 +27,7 @@ Download and install Google Chrome.<br>
 6. Paste this key into the Metamask import account section.<br>
 7. Copy thesmartcontract.sol  train from this depository and  bury it into the  law section at https://remix.ethereum.org/.Save the  train, go to the Compile tab, and  collect the law.<br>
 8. Go to the Deploy tab,  elect Environment as"Injected Provider-Metamask".<br>
-9. Click on Deploy. Copy the contract address and  bury it into theapp.js  train.  Copy the contract ABI from the Compile tab and  bury it into theapp.js  train.  launch XAMPP or MAMP( depending on which bone you installed).  Move the  design  brochure into the htdocs  brochure of the root directory.<br>
-10. Go to either localhost or localhost:8888/( depending on the software you installed and your operating system).
-Open phpMyAdmin, go to SQL, and  bury the SQL queries  handed in the sql  brochure.<br>
-11. Execute the queries.  Open the URL http://localhost:8888/DTrace or http://localhost/DTrace( depending on the software you installed, your operating system, and  design name).  The app should now be running as anticipated.<br>
+9. Click on Deploy. Copy the contract address and  bury it into theapp.js  train.  Copy the contract ABI from the Compile tab and  bury it into theapp.js  train. 
 
 ## Libraries and dependencies
 
