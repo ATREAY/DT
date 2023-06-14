@@ -1,201 +1,55 @@
-     .d88888b.  8888888b.  d8b
-    d88P" "Y88b 888   Y88b Y8P
-    888     888 888    888
-    888     888 888   d88P 888  .d88b.  888  888 .d8888b
-    888     888 8888888P"  888 d88""88b 888  888 88K
-    888 Y8b 888 888 T88b   888 888  888 888  888 "Y8888b.
-    Y88b.Y8b88P 888  T88b  888 Y88..88P Y88b 888      X88
-     "Y888888"  888   T88b 888  "Y88P"   "Y88888  88888P'
-           Y8b
+# DTrace
 
-[QRious](https://github.com/neocotic/qrious) is a pure JavaScript library for generating QR codes using HTML5 canvas.
+## Description
+A dual-use chemical tracking system that utilizes supply chain data is a technological solution that can serve both commercial and security purposes. This system involves the monitoring and tracing of chemical substances from their origin point to their final destination across the supply chain, including manufacturing, transportation, and distribution.
 
-[![Chat](https://img.shields.io/gitter/room/neocotic/qrious.svg?style=flat-square)](https://gitter.im/neocotic/qrious)
-[![Demo](https://img.shields.io/badge/demo-live-brightgreen.svg?style=flat-square)](https://codepen.io/neocotic/pen/YQzmBm)
-[![Dev Dependency Status](https://img.shields.io/david/dev/neocotic/qrious.svg?style=flat-square)](https://david-dm.org/neocotic/qrious?type=dev)
-[![License](https://img.shields.io/npm/l/qrious.svg?style=flat-square)](https://github.com/neocotic/qrious/blob/master/LICENSE.md)
-[![Release](https://img.shields.io/npm/v/qrious.svg?style=flat-square)](https://www.npmjs.com/package/qrious)
+The primary objective of this system is to enhance the efficiency and transparency of supply chain operations by providing real-time data on the movement and location of chemical substances. This information can be utilized to optimize supply chain logistics, improve inventory management, and promote seamless communication between suppliers, manufacturers, and distributors.
 
-* [Install](#install)
-* [Examples](#examples)
-* [API](#api)
-* [Migrating from older versions](#migrating-from-older-versions)
-* [Bugs](#bugs)
-* [Contributors](#contributors)
-* [License](#license)
+Furthermore, this system can also be employed for security purposes, such as preventing the unlawful diversion of chemicals for use in the production of illegal drugs or weapons. By monitoring the movement of chemicals through the supply chain, authorities can identify any dubious activity and take necessary steps to prevent illegal activities.
 
-## Install
+In summary, a dual-use chemical tracking system that leverages supply chain data can bring forth advantages for both commercial and security purposes. It can facilitate the efficient and transparent management of the supply chain while also promoting safety and security through effective monitoring and tracking of chemical substances.
 
-Install using the package manager for your desired environment(s):
+## Techstack
+1. Solidity
+2. Javascript
+3. PhP
+4. Html
+5. CSS
+6. Blockchain
+
+## Installation Steps
+
+1. Download and install Ganache from https//www.trufflesuite.com/ganache.Install XAMPP on Windows from https//www.apachefriends.org/download.html
+Download and install Google Chrome.<br>
+2. If you do not  formerly have it. also, go to the Chrome store and download the Metamask extension from https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn. Create an account on Metamask.<br>
+3. Launch Ganache.  In Metamask,  elect Networks> Custom RPC. Name the network anything you like. Copy the RPC Garçon URL from Ganache( generally HTTP://127.0.0.17545 but check to be sure).<br>
+4. Go to Metamask> Accounts> Import Account.<br>
+5. In Ganache, go to the Accounts tab, click on the  crucial icon on the right for any account, and copy the private key.  <br>
+6. Paste this key into the Metamask import account section.<br>
+7. Copy thesmartcontract.sol  train from this depository and  bury it into the  law section at https://remix.ethereum.org/.Save the  train, go to the Compile tab, and  collect the law.<br>
+8. Go to the Deploy tab,  elect Environment as"Injected Provider-Metamask".<br>
+9. Click on Deploy. Copy the contract address and  bury it into theapp.js  train.  Copy the contract ABI from the Compile tab and  bury it into theapp.js  train.  launch XAMPP or MAMP( depending on which bone you installed).  Move the  design  brochure into the htdocs  brochure of the root directory.<br>
+10. Go to either localhost or localhost:8888/( depending on the software you installed and your operating system).
+Open phpMyAdmin, go to SQL, and  bury the SQL queries  handed in the sql  brochure.<br>
+11. Execute the queries.  Open the URL http://localhost:8888/DTrace or http://localhost/DTrace( depending on the software you installed, your operating system, and  design name).  The app should now be running as anticipated.<br>
+
+## Libraries and dependencies
+
+1. Install Node.js
 
 ``` bash
-$ npm install --save qrious
-# OR:
-$ bower install --save qrious
+$ npm install 
 ```
-
-If you want to simply download the file to be used in the browser you can find them below:
-
-* [Development Version](https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.js) (71kb - [Source Map](https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.js.map))
-* [Production Version](https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js) (18kb - [Source Map](https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js.map))
-
-Check out [node-qrious](https://github.com/neocotic/node-qrious) if you want to install it for use within
-[Node.js](https://nodejs.org).
-
-## Examples
-
-``` html
-<!DOCTYPE html>
-<html>
-  <body>
-    <canvas id="qr"></canvas>
-
-    <script src="/path/to/qrious.js"></script>
-    <script>
-      (function() {
-        var qr = new QRious({
-          element: document.getElementById('qr'),
-          value: 'https://github.com/neocotic/qrious'
-        });
-      })();
-    </script>
-  </body>
-</html>
+2. Install Truffle
+``` bash
+$ npm install -g truffle
+$ truffle version
 ```
-
-Open up `demo.html` in your browser to play around a bit.
-
-## API
-
-Simply create an instance of `QRious` and you've done most of the work. You can control many aspects of the QR code
-using the following fields on your instance:
-
-| Field           | Type    | Description                                        | Default       | Read Only |
-| --------------- | ------- | -------------------------------------------------- | ------------- | --------- |
-| background      | String  | Background color of the QR code                    | `"white"`     | No        |
-| backgroundAlpha | Number  | Background alpha of the QR code                    | `1.0`         | No        |
-| element         | Element | Element to render the QR code                      | `<canvas>`    | Yes       |
-| foreground      | String  | Foreground color of the QR code                    | `"black"`     | No        |
-| foregroundAlpha | Number  | Foreground alpha of the QR code                    | `1.0`         | No        |
-| level           | String  | Error correction level of the QR code (L, M, Q, H) | `"L"`         | No        |
-| mime            | String  | MIME type used to render the image for the QR code | `"image/png"` | No        |
-| padding         | Number  | Padding for the QR code (pixels)                   | `null` (auto) | No        |
-| size            | Number  | Size of the QR code (pixels)                       | `100`         | No        |
-| value           | String  | Value encoded within the QR code                   | `""`          | No        |
-
-``` javascript
-var qr = new QRious();
-qr.background = 'green';
-qr.backgroundAlpha = 0.8;
-qr.foreground = 'blue';
-qr.foregroundAlpha = 0.8;
-qr.level = 'H';
-qr.padding = 25;
-qr.size = 500;
-qr.value = 'https://github.com/neocotic/qrious';
-```
-
-The QR code will automatically update when you change one of these fields, so be wary when you plan on changing lots of
-fields at the same time. You probably want to make a single call to `set(options)` instead as it will only update the QR
-code once:
-
-``` javascript
-var qr = new QRious();
-qr.set({
-  background: 'green',
-  backgroundAlpha: 0.8,
-  foreground: 'blue',
-  foregroundAlpha: 0.8,
-  level: 'H',
-  padding: 25,
-  size: 500,
-  value: 'https://github.com/neocotic/qrious'
-});
-```
-
-These can also be passed as options to the constructor itself:
-
-``` javascript
-var qr = new QRious({
-  background: 'green',
-  backgroundAlpha: 0.8,
-  foreground: 'blue',
-  foregroundAlpha: 0.8,
-  level: 'H',
-  padding: 25,
-  size: 500,
-  value: 'https://github.com/neocotic/qrious'
-});
-```
-
-You can also pass in an `element` option to the constructor which can be used to generate the QR code using an existing
-DOM element, which is the only time that you can specify read only options. `element` must either be a `<canvas>`
-element or an `<img>` element which can then be accessed via the `canvas` or `image` fields on the instance
-respectively. An element will be created for whichever one isn't provided or for both if no `element` is specified,
-which means that they can be appended to the document at a later time.
-
-``` javascript
-var qr = new QRious({
-  element: document.querySelector('canvas'),
-  value: 'https://github.com/neocotic/qrious'
-});
-
-qr.canvas.parentNode.appendChild(qr.image);
-```
-
-A reference to the `QRious` instance is also stored on both of the elements for convenience.
-
-``` javascript
-var canvas = document.querySelector('canvas');
-var qr = new QRious({
-  element: canvas,
-  value: 'https://github.com/neocotic/qrious'
-});
-
-qr === canvas.qrious;
-//=> true
-```
-
-### `toDataURL([mime])`
-
-Generates a base64 encoded data URI for the QR code. If you don't specify a MIME type, it will default to the one
-passed to the constructor as an option or the default value for the `mime` option.
-
-``` javascript
-var qr = new QRious({
-  value: 'https://github.com/neocotic/qrious'
-});
-
-qr.toDataURL();
-//=> "data:image/png;base64,iVBOR...AIpqDnseH86KAAAAAElFTkSuQmCC"
-qr.toDataURL('image/jpeg');
-//=> "data:image/jpeg;base64,/9j/...xqAqIqgKFAAAAAq3RRQAUUUUAf/Z"
-```
-
-## Migrating from older versions
-
-If you've been using an older major version and would like details on what's changed and information on how to migrate
-to the latest major release below:
-
-https://github.com/neocotic/qrious/wiki/Migrating-from-older-versions
-
-## Bugs
-
-If you have any problems with QRious or would like to see changes currently in development you can do so
-[here](https://github.com/neocotic/nqrious/issues). Core features and issues are maintained separately
-[here](https://github.com/neocotic/qrious-core/issues).
-
 ## Contributors
+<a href="https://github.com/ATREAY/DTrace/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ATREAY/DTrace" />
+</a>
+<a href="https://github.com/TusharPuranik/DTrace/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=TusharPuranik/DTrace" />
+</a>
 
-If you want to contribute, you're a legend! Information on how you can do so can be found in
-[CONTRIBUTING.md](https://github.com/neocotic/qrious/blob/master/CONTRIBUTING.md). We want your suggestions and pull
-requests!
-
-A list of QRious contributors can be found in [AUTHORS.md](https://github.com/neocotic/qrious/blob/master/AUTHORS.md).
-
-## License
-
-Copyright © 2017 Alasdair Mercer  
-Copyright © 2010 Tom Zerucha
-
-See [LICENSE.md](https://github.com/neocotic/qrious/blob/master/LICENSE.md) for more information on our GPLv3 license.
